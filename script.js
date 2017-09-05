@@ -6,9 +6,13 @@ $(document).ready(() => {
       type: "get",
       dataType: "json"
     }).done((response) => {
-      console.log(response.results[0].meta.client_asn_name)
-      let div =   $(`<div>${response.results[0].meta.client_asn_name}</div>`)
+
+      for(i = 0; i < response.results.length; i++){
+      console.log(response.results[i].meta.client_asn_name)
+
+      let div =   $(`<div>${response.results[i].meta.client_asn_name}</div>`)
       $("body").append(div)
+    };
     }).fail(() => {
       console.log("ajax request fails")
     }).always(() => {
