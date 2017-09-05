@@ -1,0 +1,24 @@
+{
+  "name": "mlab-available-isps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "sinon": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meagdoh/mLab-available-ISPs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meagdoh/mLab-available-ISPs/issues"
+  },
+  "homepage": "https://github.com/meagdoh/mLab-available-ISPs#readme"
+}
