@@ -1,15 +1,19 @@
-sinon = require("sinon");
-chai = require("chai");
-script = require("script.js")
+var expect = chai.expect;
 
-after(function () {
-    // When the test either fails or passes, restore the original
-    // jQuery ajax function
-    jQuery.ajax.restore();
-});
+chai.should();
 
-it('makes a GET request for ISPs', function () {
+var mySpy = sinon.spy(jQuery, "ajax");
+
+
+it('executes a GET request for ISPs', function () {
     sinon.stub(jQuery, 'ajax');
 
-    assert(jQuery.ajax.calledWithMatch({ url: 'http://data-api.measurementlab.net/locations/nausdcwashington/clients' }));
+    sinon.assert.should.always.have.been.calledWithMatch({ url: 'http://data-api.measurementlab.net/locations/nausdcwashington/clients' });
+});
+
+
+after(function () {
+  // When the test either fails or passes, restore the original
+  // jQuery ajax function
+  jQuery.ajax.restore();
 });

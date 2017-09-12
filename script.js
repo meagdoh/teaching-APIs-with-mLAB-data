@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $("button").on("click", () => {
+  $("#button").on("click", () => {
     let url = "http://data-api.measurementlab.net/locations/nausdcwashington/clients"
     $.ajax({
       url,
@@ -10,8 +10,8 @@ $(document).ready(() => {
       for(i = 0; i < response.results.length; i++){
       console.log(response.results[i].meta.client_asn_name)
 
-      let div =   $(`<div>${response.results[i].meta.client_asn_name}</div>`)
-      $("body").append(div)
+      let list =   $(`<li>${response.results[i].meta.client_asn_name}</li>`)
+      $("#body").append(list)
     };
     }).fail(() => {
       console.log("ajax request fails")
@@ -19,4 +19,4 @@ $(document).ready(() => {
       // console.log(" this always happens regardless of sucess or failure")
     })
   })
-})
+});
