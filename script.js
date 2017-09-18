@@ -7,7 +7,7 @@ $(document).ready(() => {
       dataType: "json"
     }).done((response) => {
 
-      for(i = 0; i < response.results.length; i++){
+      for(i = 0; i < 4; i++){
       console.log(response.results[i].meta.client_asn_name)
 
       let list =   $(`<li>${response.results[i].meta.client_asn_name}</li>`)
