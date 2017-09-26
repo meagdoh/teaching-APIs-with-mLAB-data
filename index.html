@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ISPs nearby</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
 
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -17,7 +17,19 @@
 
 <body>
 
-  <div class="jumbotron" id="body">
+  <div class="ui-widget">
+    <label for="city">City Name: </label>
+    <input id="city">
+  </div>
+
+  <div class="ui-widget" style="margin-top:2em; font-family:Arial">
+    Result:
+    <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+  </div>
+
+
+
+  <!-- <div class="jumbotron" id="body">
     <h1 class="display-3">Who provides internet in my area?</h1>
     <p class="lead"></p>
     <hr class="my-4">
@@ -33,7 +45,7 @@
   </div>
 
   <div class="alert alert-success" role="alert" id="output">Output</div>
-
+ -->
 
 </body>
 

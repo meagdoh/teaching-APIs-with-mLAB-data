@@ -1,15 +1,31 @@
 $(document).ready(() => {
-
-  $('#auto-Complete').autocomplete({
-      serviceURL: 'http://data-api.measurementlab.net/locations/search?q=',
-      onSelect: function (suggestion) {
-              console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+  $(function() {
+    function log(message) {
+      $("<div>").text(message).prependTo("#log");
+      $("#log").scrollTop(0);
+    }
+    $("#city").autocomplete({
+      source: function(request, response) {
+        let url = 'http://data-api.measurementlab.net/locations/search?q='
+        $.ajax({
+          url: url,
+          dataType: "json",
+          data: {
+            term: request
+          },
+          success: function(data) {
+            console.log(data)
+            response(data);
           }
+        });
+      },
+      minLength: 2,
+      select: function(event, ui) {
+        log("Selected: " + ui.item.value + " aka " + ui.item.id);
+      }
+    });
   });
 });
-
-
-
 
 //   $('#button').click(function() {
 //
