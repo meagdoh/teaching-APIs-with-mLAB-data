@@ -5,6 +5,7 @@
   "main": "script.js",
   "dependencies": {
     "chai": "^4.1.2",
+    "devbridge-autocomplete": "^1.2.16",
     "mocha": "^3.5.3",
     "requirejs": "^2.3.5",
     "sinon": "^3.2.1",

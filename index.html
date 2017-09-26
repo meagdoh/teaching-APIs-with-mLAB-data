@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ISPs nearby</title>
-  <link rel="stylesheet" href="/vendor/jQuery-autoComplete-master/jquery.auto-complete.css" class="stylsheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
 
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="/node_modules/devbridge-autocomplete/dist/jquery.autocomplete.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </head>
+
 <body>
 
-<div class="jumbotron" id="body">
-  <h1 class="display-3">Who provides internet in my area?</h1>
-  <p class="lead"></p>
-  <hr class="my-4">
-  <p>Information pulled from MLab's data viz API.</p>
+  <div class="jumbotron" id="body">
+    <h1 class="display-3">Who provides internet in my area?</h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p>Information pulled from MLab's data viz API.</p>
 
-  <input type="text" class="form-control" placeholder="City Name" aria-label="City" aria-describedby="sizing-addon2">
+    <input type="text" class="form-control" placeholder="City Name" aria-label="City" aria-describedby="sizing-addon2" id="auto-complete">
 
 
 
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" id="button" role="button">Click to find out!</a>
-  </p>
-</div>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" id="button" role="button">Click to find out!</a>
+    </p>
+  </div>
 
-      <div class="alert alert-success" role="alert" id="output">Output</div>
+  <div class="alert alert-success" role="alert" id="output">Output</div>
 
-  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <script src="script.js"></script>
+
 </body>
+
 </html>
