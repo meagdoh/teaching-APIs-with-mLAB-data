@@ -6,20 +6,22 @@ $(document).ready(() => {
     }
     $("#city").autocomplete({
       source: function(request, response) {
-        let url = 'http://data-api.measurementlab.net/locations/search?q='
+        let url = 'http://data-api.measurementlab.net/locations/search'
         $.ajax({
           url: url,
           dataType: "json",
           data: {
-            term: request
+            q: request.term
           },
           success: function(data) {
-            console.log(data)
+            for (i = 0; i < 4; i++) {
+              console.log(response.results[i].meta.client_city + ", " + response.results[i].meta.client_region)
+            }
             response(data);
           }
         });
       },
-      minLength: 2,
+      minLength: 4,
       select: function(event, ui) {
         log("Selected: " + ui.item.value + " aka " + ui.item.id);
       }
