@@ -6,7 +6,8 @@ $(document).ready(() => {
     }
     $("#city").autocomplete({
       source: function(request, response) {
-        let url = 'http://data-api.measurementlab.net/locations/search'
+        let url =
+          'http://data-api.measurementlab.net/locations/search'
         $.ajax({
           url: url,
           dataType: "json",
@@ -15,62 +16,20 @@ $(document).ready(() => {
           },
           success: function(data) {
             for (i = 0; i < 4; i++) {
-              console.log(response.results[i].meta.client_city + ", " + response.results[i].meta.client_region)
-            }
-            response(data);
+            console.log(data.results[i].meta)
+            response(data.results[i].meta);
+          }
           }
         });
       },
       minLength: 4,
       select: function(event, ui) {
-        log("Selected: " + ui.item.value + " aka " + ui.item.id);
+        var location = ui.item.value
+        log("Selected: " + location );
       }
     });
+    // store *location key* based on selection
+    //pass in *location* to http://data-api.measurementlab.net/locations/+ location + /clients'
+    //return, loop through and append --> (response.results[i].meta.client_asn_name)
   });
 });
-
-//   $('#button').click(function() {
-//
-//     var cityName = $("input").val()
-//
-//     let url = 'http://data-api.measurementlab.net/locations/search?q=' + cityName
-//     $.ajax({
-//       url,
-//       type: "get",
-//       dataType: "json"
-//     }).done((response) => {
-//
-//       for (i = 0; i < 4; i++) {
-//         console.log(response.results[i].meta.client_city + ", " + response.results[i].meta.client_region )
-//
-//         let list = $(`<li>${response.results[i].meta.client_city + ", " + response.results[i].meta.client_region}</li>`)
-//         $("#body").append(list)
-//       };
-//     }).fail(() => {
-//       console.log("ajax request fails")
-//     }).always(() => {
-//       // console.log(" this always happens regardless of sucess or failure")
-//     })
-//   });
-// });
-//   $("#button").on("click", () => {
-//     let url = 'http://data-api.measurementlab.net/locations/search?q='+cityName
-//     $.ajax({
-//       url,
-//       type: "get",
-//       dataType: "json"
-//     }).done((response) => {
-//
-//       for (i = 0; i < 4; i++) {
-//         console.log(response.results[i].meta.client_asn_name)
-//
-//         let list = $(`<li>${response.results[i].meta.client_asn_name}</li>`)
-//         $("#body").append(list)
-//       };
-//     }).fail(() => {
-//       console.log("ajax request fails")
-//     }).always(() => {
-//       // console.log(" this always happens regardless of sucess or failure")
-//     })
-//   })
-// });
