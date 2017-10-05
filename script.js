@@ -16,7 +16,7 @@ $(document).ready(() => {
           },
           success: function(data) {
             for (i = 0; i < 4; i++) {
-            // console.log(data.results[i].meta)
+            console.log(data.results[i].meta)
             response(data.results[i].meta);
           }
           }
@@ -25,26 +25,27 @@ $(document).ready(() => {
       minLength: 4,
       select: function(event, ui) {
         let location = ui.item.value
-        log(location)
-
-        let ispUrl = 'http://data-api.measurementlab.net/locations/' + location + '/clients'
-        $.ajax({
-          ispUrl,
-          type: "get",
-          dataType: "json"
-        }).done((response) => {
-          for (i = 0; i < 4; i++) {
-            console.log(response.results[i].meta.client_city + ", " + response.results[i].meta.client_region )
-          };
-      });
+        log(location);
+      }
 
 
 
-    }
+    });
 
     // store *location key* based on selection
     //pass in *location* to http://data-api.measurementlab.net/locations/+ location + /clients'
     //return, loop through and append --> (response.results[i].meta.client_asn_name)
-  });
+
+    // non-working code
+    // let ispUrl = 'http://data-api.measurementlab.net/locations/' + location + '/clients'
+    //     $.ajax({
+    //       ispUrl,
+    //       type: "get",
+    //       dataType: "json"
+    //     }).done((response) => {
+    //       for (i = 0; i < 4; i++) {
+    //         console.log(response.results[i].meta.client_city + ", " + response.results[i].meta.client_region )
+    //       };
+  // });
     });
       });
