@@ -17,14 +17,14 @@
 - OPTIONAL: Bootstrap for front-end
 
 ## What is an API?
-###An Application Programming Interface
+### An Application Programming Interface
 
 The concept of an API is simple (in this lesson):
 - Sometimes when you build an application, there's information you want to display in your app that someone else has. You could download the data, set up a server, and host the data yourself, but why do that when you can 'plug' into an existing data set, and ask for results to specific queries (questions)
 - The 'plug' webpage _is_ the API. [ show clean example of an API | cartoon about API]
 - [and what are endpoints?]
 
-#####FAQs
+##### FAQs
 - Are all APIs public? Nope. Some need a key, which you can access by requesting a key from the administrator.
 - Can I build my own API? Yup
 - We are talking about GET requests a lot. Can we _send_ data?
@@ -38,7 +38,6 @@ The concept of an API is simple (in this lesson):
 [what is measurementlab]
 
 The mLAB API nicely answers three main questions:
-[pull three from PPT]:
 1. ISPs
 2. Speeds by location
 3. and time
